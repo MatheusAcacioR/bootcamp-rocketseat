@@ -1,0 +1,31 @@
+Iniciando projeto fullstack padrao
+
+***Criando backend***
+
+Dentro da pasta do backend executar no terminal
+
+- yarn init -y
+
+Na pasta backend criar a pasta src, logo em seguida o arquivo base do backend "index.js"
+
+Na pasta backend executar no terminal o camndo para instalar o pacote do express que ira monitorar a comunicação do servidor com o cliente
+
+- yarn add express
+
+Para ligar o servidor executar "node <caminho do servidor>"
+
+Para o backend melhorar o monitoramento e nao precisar ficar desligando o serrvidor, instalar o pacote do nodemon como desenvolvimento. No tewrminal dentro do backend
+
+- yarn add nodemon -D
+
+Para ligar o servidor executar "yarn nodemon <caminho do servidor>"
+
+Para simplificar a linha de de codigo acima, pode-se criar script personalizado
+Dentro do arquivo package.json, pode-se alterar o parametro da linha "main" de "index.js" para "src/index.js"
+Pode-se criar uma linha de codigo personalizada de scripts:
+
+"scripts": {
+   "dev": "nodemon"
+},
+
+Agora sempre que precisar iniciar o servidor só digitar no terminal o comando "yarn dev"
