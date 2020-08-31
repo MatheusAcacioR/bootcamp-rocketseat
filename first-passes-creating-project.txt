@@ -29,3 +29,11 @@ Pode-se criar uma linha de codigo personalizada de scripts:
 },
 
 Agora sempre que precisar iniciar o servidor só digitar no terminal o comando "yarn dev"
+
+----------------------------------------
+
+No index.js tem todo o código comentado explicando e criando o exemplo na prática de todos os métodos HTTP's e todos os tipos de requisicão de parâmetros
+
+Instalação de um pacote para auxílio na criação de id's únicos: No terminal executar o comando:
+
+- yarn add uuivd4
