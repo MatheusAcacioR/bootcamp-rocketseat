@@ -1,0 +1,36 @@
+Iniciando projeto fullstack padrao
+
+***Criando frontend***
+
+Dentro da pasta do frontend executar no terminal
+
+- yarn init -y
+
+Na pasta frontend, executar no terminal
+
+- yarn add react react-dom
+
+Criar na pasta public o arquivo index.html e escrever o corpo básico de uma page html
+
+Para instalação do Babel, webpack e os loaders, executar no terminal dentro da pasta frontend
+
+- yarn add @babel/core @babel/preset-env @babel/preset-react webpack webpack-cli
+
+Na pasta frontend criar o arquivo babel.config.js e inserir as configurações
+
+module.exports = {
+    presets: [
+        '@babel/preset-env',
+        '@babel/preset-react'
+    ],
+};
+
+Na pasta src criar o arquivo index.js
+
+Na pasta frontend inserir os codigos no terminal
+
+- yarn add @babel/cli
+
+Para saber se o babel esta convertendo o codigo react para um codigo mais tradicional, inserir no terminal
+
+- yarn babel src/index.js --out-file public/bundle.js
