@@ -81,3 +81,13 @@ devServer: {
 No terminal executar 
 
 - yarn webpack-dev-server --mode development
+
+***Criando o primeiro componente***
+
+Dentro da pasta src, criar o arquivo App.js
+
+Dentro do Arquivo App.js, sera colocado a importação base necessaria do react, e logo depois segue-se para criação 
+do componente, injetando html pelo js atraves de funcoes
+
+Para melhor organização, criar pasta components para armazanar todos os componentes que forem ser utilizados no projeto
+
