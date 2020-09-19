@@ -34,3 +34,50 @@ Na pasta frontend inserir os codigos no terminal
 Para saber se o babel esta convertendo o codigo react para um codigo mais tradicional, inserir no terminal
 
 - yarn babel src/index.js --out-file public/bundle.js
+
+Na pasta frontend criar o arquivo weboack.config.js para configuração do webpack
+
+Para instalação do loader do babel, executar no terminal na pasta frontend
+
+- yarn add babel-loader
+
+Para configuração do webpack, inserir no arquivo webpack.config.js:
+
+const path = require('path');
+
+module.exports = {
+    entry: path.resolve(__dirname, 'src', 'index.js'),
+    output: {
+        path: path.resolve(__dirname, 'public'),
+        filename: 'bundle.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node.modules/,
+                use: {
+                    loader: 'babel-loader',
+                }
+            }
+        ]
+    },
+};
+
+Para a conversão do arquivo execultar no terminal
+
+- yarn webpack --mode development
+
+No terminal executar 
+
+- yarn add webpack webpack-dev-server -D
+
+No arquivo de configuração do webpack, abaixo da linha filename, adicionar codigo
+
+devServer: {
+    contentBase: path.resolve(__dirname, 'public'),
+},
+
+No terminal executar 
+
+- yarn webpack-dev-server --mode development
