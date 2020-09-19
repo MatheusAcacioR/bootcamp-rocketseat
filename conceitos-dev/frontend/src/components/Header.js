@@ -1,9 +1,10 @@
 import React from 'react';
 
-export default function Header() {
+// Usando desestruturação para inserir as propiedades title e as children (conteudo de dentro do componente)
+export default function Header({ title }) {
     return (
         <header>
-            <h1>ReactJS</h1>
+            <h1>{title}</h1>
             <p>Aprendendo react</p>
         </header>
     )

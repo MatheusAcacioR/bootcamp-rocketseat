@@ -4,3 +4,89 @@
  * 
  * Loaders: babelç-loader, css-loader, image-loader
  */
+
+ /**
+ Componente
+
+** Propriedade
+
+Passagem de qualquer tipo de parametro pelo Componente, Após criar o parametro dentro do componente, 
+passar esse parametro na funcao do componente
+
+Tambem pode-se se passar algum tipo de conteudo em um componente, ewse conteudo se chama children, 
+e parta isso, deve-se passar esse mesmo parametro dentro da função
+
+// Usando desestruturação para inserir as propiedades title e as children (conteudo de dentro do componente)
+export default function Header({title, children}) {
+    return (
+        <header>
+            <h1>{title}</h1>
+            {children}
+            <p>Aprendendo react</p>
+            {children}
+        </header>
+    )
+}
+
+-----------------------------------------------------------------------------------------------------------------------
+
+function App() {
+    return (
+        <>
+        {/**Criando propriedades e childrens de dentro do conteudo do componente */}
+          <Header title="Homepage" >
+              <ul>
+                  <li>Tesye 1</li>
+                  <li>Tesye 2</li>
+                  <li>Tesye 3</li>
+              </ul>
+          </Header>
+          <Header title="Projects">
+             <ul>
+                  <li>Tesye 1</li>
+                  <li>Tesye 2</li>
+                  <li>Tesye 3</li>
+                  <li>Tesye 4</li>
+              </ul>
+          </Header>
+        </>
+    );
+}
+
+** Estado e imutabilidade
+
+Ultiliza-se o conceito de estado para que o React possa rederizar em tela quando a informação de uma variavel é alterada
+
+function App() {
+    {/**Importar o useState no React */}
+    {/*O useState retorna um array com duas posiçoes
+    1. Variavel com o valor inicial
+    2. Função que ira atualizar o valor da variavel
+
+    Para isso podemos usar a desestruturação e utilizar essas duas posiçoes do array
+    */}
+    const [projects, setProjects] = useState(['Desenvolvimento de App', 'Front-end web', 'Python e React']);
+
+    function handleAddProject() {
+        //projects.push(`Novo Projeto ${Date.now()}`);
+
+        {/*Respeitando o conceito de Imutabilidade, o React não altera o valor de uma variavel, ele cria uma nova com os
+        mesmos valores da anterior*/}
+        setProjects([...projects, `Novo Projeto ${Date.now()}`])
+
+        console.log(projects);
+    }
+
+    return (
+        <>
+          <Header title="Projects" />
+             <ul>
+                {projects.map(project => <li key={project}>{project}</li>)}
+             </ul>
+
+             <button type="button" onClick={handleAddProject}>Adicionar</button>
+        </>
+    );
+}
+
+ */
