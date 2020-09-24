@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import api from './services/api';
 import Header from './components/Header';
 import './App.css';
-import backgroundImage from './assets/background.jpg'
 
 function App() {
     {/**Importar o useState no React */ }
@@ -11,7 +11,19 @@ function App() {
 
     Para isso podemos usar a desestruturação e utilizar essas duas posiçoes do array
     */}
-    const [projects, setProjects] = useState(['Desenvolvimento de App', 'Front-end web', 'Python e React']);
+    const [projects, setProjects] = useState([]);
+
+    //useEffect é utilizado para disparar uma função quamndo uma informação é alterada ou disparar uma função quando alguma 
+    //informação é mostrada em tela
+
+    //Função que requer dois parametros, a função que vai ser disparada, e quando essa função vai ser disparada
+    useEffect(() => {
+        //chamada a api e o metodo dela, passando no parametro o caminho depois da 'barra'. Pode utilizar o .then como 
+        //opcao da requisicao demorar um certo tempo
+        api.get('projects').then(response => {
+            setProjects(response.data);
+        });
+    }, []);
 
     function handleAddProject() {
         //projects.push(`Novo Projeto ${Date.now()}`);
@@ -25,10 +37,8 @@ function App() {
         <>
             <Header title="Projects" />
 
-            <img width={300} src={backgroundImage}/>
-
             <ul>
-                {projects.map(project => <li key={project}>{project}</li>)}
+                {projects.map(project => <li key={project.id}>{project.title}</li>)}
             </ul>
 
             <button type="button" onClick={handleAddProject}>Adicionar</button>

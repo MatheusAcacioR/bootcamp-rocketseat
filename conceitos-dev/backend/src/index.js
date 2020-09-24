@@ -1,10 +1,16 @@
 // Reqisitando as funções do pacote do express
 const express = require('express');
 
+//Instanciando o CORS
+const cors = require('cors');
+
 const { uuid, isUuid } = require('uuidv4');
 
 // Invocando todos os métodos do objeto do express em uma variável
 const app = express();
+
+//Invocando o CORS
+app.use(cors());
 
 // O express por padrão nao lê informações do tipo JSON, para isso é necesário passar esse método para o express
 app.use(express.json());

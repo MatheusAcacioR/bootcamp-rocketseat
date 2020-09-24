@@ -91,7 +91,8 @@ do componente, injetando html pelo js atraves de funcoes
 
 Para melhor organização, criar pasta components para armazanar todos os componentes que forem ser utilizados no projeto
 
-Para importação de arquivos CSS, precisa configurar nova regra. No arquivo webpack.config.js, inserir as seguintes linhas, dentro da 'rules'
+Para importação de arquivos CSS, precisa configurar nova regra. No arquivo webpack.config.js, 
+inserir as seguintes linhas, dentro da 'rules'
 
             {
                 test: /\.css$/,
@@ -108,17 +109,29 @@ No terminal , executar os seguintes comando para instalação dos pacotes
 
 Criar arquivo App.css dentro da pasta src
 
-Para melhorar a build do projeto e simplificar o comando de build, no arquivo packege.json, adicionar as determinadas linhas de codigo, depois da linha 'license'
+Para melhorar a build do projeto e simplificar o comando de build, no arquivo packege.json, adicionar as determinadas 
+linhas de codigo, depois da linha 'license'
 
   "scripts": {
     "dev": "yarn webpack-dev-server --mode development",
     "build": "webpack --mode production"
   },
 
-  Agora sempre que precisar fazer rebuild do projeto, executa-se so o comando 'yarn dev'
+Agora sempre que precisar fazer rebuild do projeto, executa-se so o comando 'yarn dev'
 
-  Para importação de arquivos em geral como por exemplo arquivos de imagem, instalar modulo
+Para importação de arquivos em geral como por exemplo arquivos de imagem, instalar modulo
 
-  - yarn add file-loader
+- yarn add file-loader
 
-  Dentro da pasta src criar pasta assets e colocar um arquivo de imagem la dentro
+Dentro da pasta src criar pasta assets e colocar um arquivo de imagem la dentro
+
+***Conectando o frontend ao backend***
+
+No terminal, dentro da pasta frontend, executar o comandop para instalação do modulo que ira conectar o frontend ao backend
+
+- yarn add axios
+
+Criar dentro da pasta src, a pasta services e logo depois o arquivo api.js
+
+Apos a criacao e configuração do arquivo de chamada a api do backend, importar esse arquivo de api no arquivo geral 
+do projeto frontend App.js
