@@ -135,3 +135,7 @@ Criar dentro da pasta src, a pasta services e logo depois o arquivo api.js
 
 Apos a criacao e configuração do arquivo de chamada a api do backend, importar esse arquivo de api no arquivo geral 
 do projeto frontend App.js
+
+Para poder utilizar funções assincronas, deve-se instalar no frontend um plugin para o babel, pois ele nao suporta usar funcoes desse modo
+
+- yarn add @babel/plugin-transform-runtime -D
