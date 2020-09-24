@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
+import './App.css';
+import backgroundImage from './assets/background.jpg'
 
 function App() {
-    {/**Importar o useState no React */}
+    {/**Importar o useState no React */ }
     {/*O useState retorna um array com duas posiçoes
     1. Variavel com o valor inicial
     2. Função que ira atualizar o valor da variavel
@@ -21,12 +23,15 @@ function App() {
 
     return (
         <>
-          <Header title="Projects" />
-             <ul>
-                {projects.map(project => <li key={project}>{project}</li>)}
-             </ul>
+            <Header title="Projects" />
 
-             <button type="button" onClick={handleAddProject}>Adicionar</button>
+            <img width={300} src={backgroundImage}/>
+
+            <ul>
+                {projects.map(project => <li key={project}>{project}</li>)}
+            </ul>
+
+            <button type="button" onClick={handleAddProject}>Adicionar</button>
         </>
     );
 }
